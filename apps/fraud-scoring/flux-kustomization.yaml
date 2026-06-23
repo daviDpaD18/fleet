@@ -10,7 +10,3 @@ spec:
   sourceRef:
     kind: GitRepository
     name: fraud-scoring
-  postBuild:
-    substituteFrom:
-      - kind: ConfigMap
-        name: cluster-vars
