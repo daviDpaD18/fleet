@@ -4,7 +4,9 @@ metadata:
   name: fraud-scoring
   namespace: flux-system
 spec:
-  interval: 1m0s
+  interval: 1m
   url: https://github.com/daviDpaD18/fraud-scoring-deploy
   ref:
-    branch: "main"
+    branch: main
+  secretRef:
+    name: flux-git-auth
