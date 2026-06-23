@@ -1,0 +1,16 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: fraud-scoring
+  namespace: flux-system
+spec:
+  interval: 5m
+  path: "./kubernetes"
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: fraud-scoring
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: cluster-vars
