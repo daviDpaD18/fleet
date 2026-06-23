@@ -7,4 +7,4 @@ spec:
   interval: 1m0s
   url: https://github.com/daviDpaD18/fraud-scoring-deploy
   ref:
-    branch: "${GIT_BRANCH}"
+    branch: "main"
