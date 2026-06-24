@@ -3,4 +3,3 @@ kind: Kustomization
 resources:
   - fraud-scoring
   - fraud-scoring-live
-  - monitoring
