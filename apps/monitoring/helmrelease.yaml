@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: kube-prometheus-stack
+  version: ">=45.0.0"
+  sourceRef:
+    kind: HelmRepository
+    name: prometheus-community
+    namespace: flux-system
+  values:
+    grafana:
+      enabled: true
+      adminPassword: "admin123"
+    prometheus:
+      prometheusSpec:
+        serviceMonitorSelectorNilUsesHelmValues: false
+        podMonitorSelectorNilUsesHelmValues: false
+    alertmanager:
+      enabled: false
