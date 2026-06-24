@@ -1,0 +1,12 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: fraud-scoring-live
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: https://github.com/daviDpaD18/fraud-scoring-deploy
+  ref:
+    branch: production
+  secretRef:
+    name: flux-git-auth
